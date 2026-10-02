@@ -5,145 +5,143 @@ import type { Metadata } from 'next';
 import { METHOD_STEPS, SITE_CONFIG } from '@/data/siteData';
 
 export const metadata: Metadata = {
-  title: 'El Método | Lidia Llanelis',
+  title: 'El Método Equilibrio 360º | Lidia Llanelis',
   description:
-    'Conoce el método integrativo en 4 fases de Lidia Llanelis: desde la primera consulta y plan personalizado hasta el acompañamiento continuado y hábitos definitivos.',
+    'Conoce el Método Equilibrio 360º de Lidia Llanelis en 4 etapas: desde la primera consulta sin juicios hasta la consolidación de hábitos que duran toda la vida.',
 };
 
 export default function MetodoPage() {
   return (
-    <div className="py-12 sm:py-20 space-y-24 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+    <div className="py-8 sm:py-20 space-y-16 sm:space-y-24 max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 overflow-x-hidden">
       {/* Page Header */}
-      <section className="space-y-6 max-w-3xl">
+      <section className="space-y-4 sm:space-y-6 max-w-3xl">
         <span className="text-xs uppercase font-mono tracking-widest text-clay font-medium">
           Estructura &middot; Proceso &middot; Evidencia
         </span>
-        <h1 className="font-serif text-4xl sm:text-6xl text-olive font-normal leading-[1.1] tracking-tight">
-          El Método en 4 etapas: <br />
+        <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-olive font-normal leading-[1.1] tracking-tight">
+          El Método Equilibrio 360º: <br />
           <span className="italic font-light text-clay">transformación gradual y sostenible.</span>
         </h1>
-        <p className="text-base sm:text-lg text-ink-muted leading-relaxed">
+        <p className="text-sm sm:text-base lg:text-lg text-ink-muted leading-relaxed">
           Los atajos y las dietas restrictivas no funcionan a largo plazo porque chocan contra tu biología y tu día a día. Mi método acompaña a tu organismo paso a paso, respetando tus tiempos y consolidando cada logro de forma definitiva.
         </p>
       </section>
 
       {/* Numbered Vertical Timeline */}
-      <section className="space-y-16 relative">
-        <div className="space-y-12">
-          {METHOD_STEPS.map((step, idx) => (
-            <div
-              key={step.number}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start p-8 sm:p-12 rounded-2xl bg-bone border border-olive/15 shadow-sm relative overflow-hidden"
-            >
-              {/* Giant numeral watermark */}
-              <div className="lg:col-span-2 flex flex-col justify-start">
-                <span className="font-serif text-6xl sm:text-7xl font-light text-clay/80 leading-none">
-                  {step.number}
-                </span>
-                <span className="text-[11px] font-mono uppercase tracking-widest text-ink-muted mt-2">
-                  Etapa {idx + 1} de 4
-                </span>
-              </div>
+      <section className="space-y-8 sm:space-y-12 relative">
+        {METHOD_STEPS.map((step, idx) => (
+          <div
+            key={step.number}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start p-6 sm:p-12 rounded-2xl bg-bone border border-olive/15 shadow-sm relative overflow-hidden"
+          >
+            {/* Numeral */}
+            <div className="lg:col-span-2 flex flex-col justify-start">
+              <span className="font-serif text-5xl sm:text-7xl font-light text-clay/80 leading-none">
+                {step.number}
+              </span>
+              <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-ink-muted mt-2">
+                Etapa {idx + 1} de 4
+              </span>
+            </div>
 
-              {/* Core description */}
-              <div className="lg:col-span-6 space-y-4">
-                <div className="space-y-1">
-                  <span className="text-xs font-mono uppercase tracking-wider text-clay">
-                    {step.subtitle}
-                  </span>
-                  <h2 className="font-serif text-2xl sm:text-3xl text-olive font-normal">
-                    {step.title}
-                  </h2>
-                </div>
-                <p className="text-sm text-ink-muted leading-relaxed">
-                  {step.description}
-                </p>
-                <div className="pt-2 text-xs text-olive/90 leading-relaxed font-medium bg-sand/20 p-4 rounded-md border-l-2 border-olive/30">
-                  {step.detail}
-                </div>
+            {/* Core description */}
+            <div className="lg:col-span-6 space-y-3 sm:space-y-4">
+              <div className="space-y-1">
+                <span className="text-xs font-mono uppercase tracking-wider text-clay font-bold">
+                  {step.subtitle}
+                </span>
+                <h2 className="font-serif text-xl sm:text-3xl text-olive font-normal">
+                  {step.title}
+                </h2>
               </div>
-
-              {/* Key benefit pill */}
-              <div className="lg:col-span-4 bg-sand/30 p-6 rounded-xl border border-olive/10 space-y-3">
-                <p className="font-mono text-[11px] uppercase tracking-wider text-olive font-semibold">
-                  ¿Qué consigues en esta fase?
-                </p>
-                <ul className="text-xs text-ink-muted space-y-2">
-                  {idx === 0 && (
-                    <>
-                      <li className="flex items-start gap-2">
-                        <span className="text-clay">✓</span>
-                        <span>Identificación precisa de desequilibrios y causas raíz.</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-clay">✓</span>
-                        <span>Alivio de la ansiedad al tener un mapa claro de actuación.</span>
-                      </li>
-                    </>
-                  )}
-                  {idx === 1 && (
-                    <>
-                      <li className="flex items-start gap-2">
-                        <span className="text-clay">✓</span>
-                        <span>Menús sabrosos adaptados a tu compra y cocina habitual.</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-clay">✓</span>
-                        <span>Disminución inmediata de la pesadez y la inflamación.</span>
-                      </li>
-                    </>
-                  )}
-                  {idx === 2 && (
-                    <>
-                      <li className="flex items-start gap-2">
-                        <span className="text-clay">✓</span>
-                        <span>Soporte cercano para no abandonar ante semanas difíciles.</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-clay">✓</span>
-                        <span>Ajustes en tiempo real según cómo responde tu digestión.</span>
-                      </li>
-                    </>
-                  )}
-                  {idx === 3 && (
-                    <>
-                      <li className="flex items-start gap-2">
-                        <span className="text-clay">✓</span>
-                        <span>Tranquilidad y libertad total ante cualquier menú o evento social.</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-clay">✓</span>
-                        <span>Mantenimiento del peso y energía constante sin efecto rebote.</span>
-                      </li>
-                    </>
-                  )}
-                </ul>
+              <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                {step.description}
+              </p>
+              <div className="pt-2 text-xs text-olive/90 leading-relaxed font-medium bg-sand/20 p-3 sm:p-4 rounded-md border-l-2 border-olive/30">
+                {step.detail}
               </div>
             </div>
-          ))}
-        </div>
+
+            {/* Key benefit pill */}
+            <div className="lg:col-span-4 bg-sand/30 p-5 sm:p-6 rounded-xl border border-olive/10 space-y-2.5">
+              <p className="font-mono text-[11px] uppercase tracking-wider text-olive font-semibold">
+                ¿Qué consigues en esta fase?
+              </p>
+              <ul className="text-xs text-ink-muted space-y-2">
+                {idx === 0 && (
+                  <>
+                    <li className="flex items-start gap-2">
+                      <span className="text-clay font-bold">✓</span>
+                      <span>Identificación precisa de desequilibrios y causas raíz.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-clay font-bold">✓</span>
+                      <span>Alivio de la ansiedad al tener un mapa claro de actuación.</span>
+                    </li>
+                  </>
+                )}
+                {idx === 1 && (
+                  <>
+                    <li className="flex items-start gap-2">
+                      <span className="text-clay font-bold">✓</span>
+                      <span>Menús sabrosos adaptados a tu compra y cocina habitual.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-clay font-bold">✓</span>
+                      <span>Disminución rápida de la hinchazón y pesadez.</span>
+                    </li>
+                  </>
+                )}
+                {idx === 2 && (
+                  <>
+                    <li className="flex items-start gap-2">
+                      <span className="text-clay font-bold">✓</span>
+                      <span>Soporte cercano para no abandonar ante semanas difíciles.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-clay font-bold">✓</span>
+                      <span>Ajustes en tiempo real según cómo responde tu digestión.</span>
+                    </li>
+                  </>
+                )}
+                {idx === 3 && (
+                  <>
+                    <li className="flex items-start gap-2">
+                      <span className="text-clay font-bold">✓</span>
+                      <span>Tranquilidad y libertad total ante cualquier menú o evento social.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-clay font-bold">✓</span>
+                      <span>Mantenimiento del peso y energía constante sin efecto rebote.</span>
+                    </li>
+                  </>
+                )}
+              </ul>
+            </div>
+          </div>
+        ))}
       </section>
 
-      {/* Visual Break with Consultation scene */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-sand/30 p-8 sm:p-12 rounded-2xl border border-olive/15">
+      {/* Visual Break with real photo */}
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center bg-sand/30 p-6 sm:p-12 rounded-2xl border border-olive/15">
         <div className="lg:col-span-6 relative aspect-[4/3] rounded-xl overflow-hidden shadow-md">
           <Image
-            src="/images/consulta-integrativa.jpg"
-            alt="Consulta serena y personalizada en Lidia Llanelis Nutrición"
+            src="/images/lidia-evento-seminario.jpg"
+            alt="Lidia Llanelis facilitando y guiando en un entorno de aprendizaje"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover img-editorial"
+            className="object-cover object-top img-editorial"
           />
         </div>
         <div className="lg:col-span-6 space-y-4">
-          <span className="text-xs uppercase font-mono tracking-widest text-clay">
+          <span className="text-xs uppercase font-mono tracking-widest text-clay font-medium">
             Calidez y proximidad
           </span>
-          <h2 className="font-serif text-3xl text-olive">
+          <h2 className="font-serif text-2xl sm:text-3xl text-olive">
             La diferencia de un acompañamiento humano
           </h2>
           <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-            Una pauta en un papel se queda guardada en un cajón si no va respaldada por una persona que comprende tus dificultades cotidianas. En cada sesión revisamos no solo lo que comes, sino cómo te sientes, cómo duermes y cómo interactúa tu rutina con tus metas.
+            Una pauta en un papel se queda guardada en un cajón si no va respaldada por una persona que comprende tus dificultades cotidianas. En cada sesión de Equilibrio 360º revisamos no solo lo que comes, sino cómo te sientes, cómo duermes y cómo interactúa tu rutina con tus metas.
           </p>
           <div className="pt-2">
             <Link
@@ -158,17 +156,17 @@ export default function MetodoPage() {
       </section>
 
       {/* CTA final */}
-      <section className="bg-olive text-bone p-10 sm:p-14 rounded-2xl text-center space-y-6">
-        <h2 className="font-serif text-3xl sm:text-4xl font-light max-w-2xl mx-auto leading-tight">
+      <section className="bg-olive text-bone p-8 sm:p-14 rounded-2xl text-center space-y-6">
+        <h2 className="font-serif text-2xl sm:text-4xl font-light max-w-2xl mx-auto leading-tight">
           ¿Preparada para comenzar la primera etapa?
         </h2>
         <p className="text-xs sm:text-sm text-sand/80 max-w-xl mx-auto leading-relaxed">
           Reserva tu cita previa ahora y demos el primer paso con serenidad y claridad.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2">
           <Link
             href="/reservar"
-            className="px-8 py-3.5 bg-clay text-bone text-xs uppercase tracking-widest font-medium rounded-sm hover:bg-clay-hover transition-colors"
+            className="w-full sm:w-auto px-8 py-3.5 bg-clay text-bone text-xs uppercase tracking-widest font-medium rounded-sm hover:bg-clay-hover transition-colors text-center"
           >
             Reserva tu primera consulta
           </Link>
@@ -176,7 +174,7 @@ export default function MetodoPage() {
             href={SITE_CONFIG.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-7 py-3.5 border border-sand/40 text-sand text-xs uppercase tracking-widest font-medium rounded-sm hover:bg-bone/10 transition-colors"
+            className="w-full sm:w-auto px-7 py-3.5 border border-sand/40 text-sand text-xs uppercase tracking-widest font-medium rounded-sm hover:bg-bone/10 transition-colors text-center"
           >
             Escríbeme por WhatsApp
           </a>

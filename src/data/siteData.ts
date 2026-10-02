@@ -21,11 +21,14 @@ export interface MethodStep {
 
 export interface ReviewItem {
   author: string;
+  reviewCount: string;
   source: string;
   rating: number;
+  timeAgo: string;
   date: string;
   quote: string;
   verified: boolean;
+  ownerResponse?: string;
 }
 
 export interface FaqItem {
@@ -37,6 +40,7 @@ export interface FaqItem {
 export const SITE_CONFIG = {
   name: "Lidia Llanelis",
   brandTitle: "Lidia Llanelis | Coach de Salud Integrativa y Nutrición",
+  methodBrand: "Método Equilibrio 360º",
   profession: "Coach de Salud Integrativa y Nutricionista",
   phone: "+34 615 89 86 13",
   phoneClean: "+34615898613",
@@ -45,25 +49,25 @@ export const SITE_CONFIG = {
   email: "[TO_FILL: Correo electrónico profesional, ej. contacto@lidiallanelis.es]",
   address: "[TO_FILL: Dirección del centro o consulta presencial en España]",
   city: "[TO_FILL: Ciudad y provincia en España]",
-  hoursSummary: "Apertura a las 10:00 h · Horario completo [TO_FILL: Horario de atención semanal, ej. L-V de 10:00 a 19:30]",
+  hoursSummary: "Apertura a las 10:00 h · Horario semanal completo [TO_FILL: ej. L-V de 10:00 a 19:30]",
   googleRating: "5,0",
   googleReviewsCount: 3,
   googleRatingText: "5,0 en Google",
   googleReviewsUrl: "[TO_FILL: Enlace directo al perfil verificado de Google My Business]",
   instagramHandle: "[TO_FILL: @lidiallanelis]",
   instagramUrl: "[TO_FILL: https://instagram.com/lidiallanelis]",
-  collegiateNumber: "[TO_FILL: Nº de colegiado o registro profesional / certificación]",
-  credentials: "[TO_FILL: Título universitario / Certificaciones oficiales en nutrición humana y salud integrativa]",
+  collegiateNumber: "[TO_FILL: Nº de colegiado o registro profesional]",
+  credentials: "[TO_FILL: Titulación y certificaciones oficiales en nutrición humana y salud integrativa]",
   onlineConsultAvailable: true,
   leadMagnetTitle: "Guía de Primeros Pasos: Reconectar con tu Alimentación sin Culpa",
-  leadMagnetSubtitle: "Un cuaderno breve y práctico para escuchar a tu cuerpo, ordenar tus comidas y dejar atrás las dietas restrictivas.",
+  leadMagnetSubtitle: "Un cuaderno práctico para escuchar a tu cuerpo, ordenar tus comidas y dejar atrás las dietas restrictivas.",
   medicalDisclaimer: "Aviso importante: El contenido de este sitio web y el acompañamiento ofrecido tienen fines educativos, nutricionales y de cambio de hábitos saludables. En ningún caso sustituyen el diagnóstico, prescripción médica o tratamiento clínico de un facultativo colegiado.",
-  testimonialsNotice: "Nota de transparencia: Las experiencias compartidas corresponden a procesos individuales reales con consentimiento expreso por escrito. Los resultados varían en función de cada organismo, historial clínico y compromiso individual.",
+  testimonialsNotice: "Nota de transparencia: Reseñas reales y verificadas de Google My Business. Los resultados de cada proceso son individuales y dependen del historial clínico y compromiso de cada paciente.",
 };
 
 export const NAV_LINKS = [
   { label: "Sobre mí", href: "/sobre-mi" },
-  { label: "Método", href: "/metodo" },
+  { label: "Método 360º", href: "/metodo" },
   { label: "Servicios", href: "/servicios" },
   { label: "Resultados", href: "/resultados" },
   { label: "Preguntas frecuentes", href: "/preguntas-frecuentes" },
@@ -74,31 +78,31 @@ export const NAV_LINKS = [
 export const METHOD_STEPS: MethodStep[] = [
   {
     number: "01",
-    title: "Primera consulta y escucha profunda",
-    subtitle: "Comprender tu punto de partida sin juicios",
-    description: "Evaluamos en profundidad tu historial de salud, analíticas recientes [TO_FILL: solicitar analíticas específicas], patrones de descanso, nivel de estrés, digestiones y tu relación emocional con la comida.",
-    detail: "Dedicamos el tiempo necesario a entender el contexto completo de tu vida cotidiana: horarios de trabajo, cocina disponible y barreras reales que antes te frenaron.",
+    title: "Primera consulta y escucha sin juicios",
+    subtitle: "Comprender tu punto de partida real",
+    description: "Evaluamos en profundidad tu historial de salud, analíticas recientes [TO_FILL], descanso, estrés, digestiones y tu relación emocional con la comida. Desde la empatía de quien ha vivido esa misma lucha.",
+    detail: "Dedicamos el tiempo que haga falta para entender tu contexto: horarios de trabajo, familia y barreras reales que antes te frenaron.",
   },
   {
     number: "02",
-    title: "Plan personalizado integrativo",
-    subtitle: "Una pauta adaptada a tu realidad, no un menú genérico",
-    description: "Diseño una estrategia nutricional realista, deliciosa y flexible, basada en alimentos frescos de temporada, salud digestiva e indicaciones claras para tu ritmo de vida.",
-    detail: "Sin listas interminables de prohibiciones. Trabajamos con recetas sencillas, listas de la compra organizadas y equilibrio metabólico adaptado a ti.",
+    title: "Plan personalizado integrativo 360º",
+    subtitle: "Una pauta adaptada a tu vida, no un menú de papel",
+    description: "Diseño una estrategia nutricional realista, saciante y flexible, basada en alimentos frescos, salud de la microbiota y crononutrición adaptada a tu ritmo.",
+    detail: "Sin listas infinitas de prohibiciones. Trabajamos con recetas sencillas, compra consciente y equilibrio metabólico sin pasar hambre.",
   },
   {
     number: "03",
-    title: "Acompañamiento continuo",
-    subtitle: "Soporte entre sesiones para que no camines a solas",
-    description: "La verdadera transformación ocurre entre semana. Dispones de seguimiento para resolver dudas prácticas, ajustar recetas y superar imprevistos laborales o sociales.",
-    detail: "Sesiones de revisión periódicas para celebrar avances, modular la pauta según tus sensaciones y consolidar cada pequeño paso con serenidad.",
+    title: "Acompañamiento cercano y seguimiento continuo",
+    subtitle: "Contacto directo entre sesiones para que nunca camines a solas",
+    description: "La verdadera transformación sucede en el día a día. Estamos en contacto para resolver dudas, adaptar recetas y superar imprevistos laborales o sociales sin angustia.",
+    detail: "Sesiones de revisión periódicas para modular la pauta según tus sensaciones y afianzar la confianza en ti misma con total serenidad.",
   },
   {
     number: "04",
-    title: "Hábitos que duran",
-    subtitle: "Autonomía definitiva para toda tu vida",
-    description: "El objetivo final no es que dependas de una pauta, sino que adquieras criterio intuitivo, tranquilidad ante la mesa y una energía constante que perdure en los años venideros.",
-    detail: "Construyes una relación pacífica con el espejo y con el plato, disfrutando de la comida en familia, viajes o restaurantes sin temor ni efecto rebote.",
+    title: "Hábitos que duran toda la vida",
+    subtitle: "Autonomía definitiva y paz con la comida",
+    description: "El objetivo final de Equilibrio 360º no es que vivas a dieta, sino que adquieras criterio intuitivo, energía constante y una relación de cariño y respeto hacia tu cuerpo.",
+    detail: "Construyes una relación pacífica con el espejo y con el plato, disfrutando de comidas en familia, viajes o restaurantes sin culpa ni efecto rebote.",
   },
 ];
 
@@ -118,7 +122,7 @@ export const SERVICES: ServiceItem[] = [
       "Historia dietética y clínica completa (60-75 min)",
       "Revisión de analíticas y pautas personalizadas",
       "Plan nutricional individualizado y dossier de recetas prácticas",
-      "Resolución de dudas por correo durante las 2 primeras semanas",
+      "Resolución de dudas por correo y WhatsApp durante las 2 primeras semanas",
     ],
     duration: "[TO_FILL: ej. 75 minutos primera consulta / 45 min revisiones]",
     price: "[TO_FILL: ej. 85 € primera sesión / bonos disponibles]",
@@ -127,7 +131,7 @@ export const SERVICES: ServiceItem[] = [
   {
     slug: "coaching-salud-integrativa",
     number: "02",
-    title: "Coaching de Salud Integrativa",
+    title: "Coaching de Salud Integrativa (Equilibrio 360º)",
     shortDesc: "Acompañamiento holístico que integra nutrición, gestión del estrés, descanso reparador y relación emocional.",
     fullDesc: "Un proceso continuado de cambio de hábitos diseñado para quienes ya saben la teoría pero no consiguen sostenerla. Trabajamos la mentalidad, los disparadores del hambre emocional, el estrés cotidiano y los biorritmos de descanso.",
     forWhom: [
@@ -170,8 +174,8 @@ export const SERVICES: ServiceItem[] = [
     slug: "perdida-de-peso-saludable",
     number: "04",
     title: "Pérdida de Peso Saludable y Consciente",
-    shortDesc: "Mi método propio nacido de mi experiencia personal de 30 kg menos y la ciencia de la nutrición integrativa.",
-    fullDesc: "Perder peso no va de pasar hambre, contar gramos ni castigarse en el gimnasio. Va de desinflamar el cuerpo, sanar el metabolismo y transformar los pensamientos que te boicotean. Un enfoque empático nacido tanto del rigor técnico como de haber recorrido el mismo camino en primera persona.",
+    shortDesc: "El método propio nacido de mi experiencia real de 30 kg menos y la ciencia de la nutrición integrativa.",
+    fullDesc: "Perder peso no va de pasar hambre, contar gramos ni castigarse. Va de desinflamar el cuerpo, sanar el metabolismo y transformar los pensamientos que te boicotean. Un enfoque empático nacido tanto del rigor técnico como de haber recorrido el mismo camino en primera persona.",
     forWhom: [
       "Quienes han vivido el efecto rebote de dietas milagro restrictivas.",
       "Personas con sobrepeso que desean recuperar agilidad, ligereza y salud.",
@@ -191,28 +195,37 @@ export const SERVICES: ServiceItem[] = [
 
 export const GOOGLE_REVIEWS: ReviewItem[] = [
   {
-    author: "María G.",
+    author: "Mónica Rios",
+    reviewCount: "4 reseñas",
     source: "Google Reseñas",
     rating: 5,
-    date: "14/03/2024",
-    quote: "Lidia me ha cambiado la forma de ver la comida. Después de años encadenando dietas que me amargaban la vida, con ella aprendí a comer sin miedo, con platos ricos y respetando mis horarios de trabajo. Por primera vez siento calma.",
+    timeAgo: "Hace un mes",
+    date: "Septiembre 2026",
+    quote: "Hola Lidia. Quería escribirte estas líneas para darte las gracias de todo corazón. Tu ayuda y tu guía en este proceso han sido fundamentales para mí. Gracias a ti no solo he mejorado mi alimentación, sino que he aprendido a entender mi cuerpo y a relacionarme de una forma mucho más sana con la comida.\n\nTu paciencia, tus conocimientos y tu constante apoyo me han dado la confianza que necesitaba para lograr mis objetivos. Han sido muchos mensajes, en cada momento, y siempre ha habido una respuesta, un seguimiento increíble que recomiendo 100x100 a cualquiera que esté como yo estaba cuando te conocí. Estoy muy agradecida de haberte conocido, para mí ya no eres mi coach, eres mucho más que eso.\n\nMe siento con más energía, más salud y, sobre todo, muy feliz de ver todo lo que he avanzado a tu lado. Eres una profesional increíble y una gran motivación. ¡Muchísimas gracias por todo! La recomiendo a todo el mundo. Con ella todo es muy fácil.",
     verified: true,
+    ownerResponse: "Mónica, gracias de corazón por tus palabras. 💚 Para mí ha sido un privilegio acompañarte durante este proceso y, sobre todo, verte avanzar no solo en tus objetivos, sino también en la confianza que has ido construyendo en ti misma. Me hace especialmente feliz que destaques algo que para mí es fundamental: aprender a entender tu cuerpo, mejorar tu relación con la comida y sentir que puedes cuidarte de una forma que puedas mantener en el tiempo. Y sí, han sido muchos mensajes, muchas conversaciones, muchas dudas y muchos momentos compartidos. Pero cada uno de ellos ha formado parte de tu proceso, y el mérito de todo lo que has conseguido es tuyo. Gracias por haber confiado en mí desde el principio, por dejarme acompañarte y por permitirme vivir de cerca una parte tan importante de tu historia. Y esa frase tuya de que ya no soy solo tu coach… me la guardo con muchísimo cariño. Gracias, Mónica, por confiar en mí y por recordarme por qué hago lo que hago. Te deseo que sigas cuidándote, disfrutando de tu energía, de tu salud y, sobre todo, de todo lo que has aprendido sobre ti. 💚",
   },
   {
-    author: "Carlos M.",
+    author: "Elisabeth López Bermúdez",
+    reviewCount: "1 reseña",
     source: "Google Reseñas",
     rating: 5,
-    date: "28/05/2024",
-    quote: "La cercanía de Lidia marca la diferencia. Se nota que sabe de verdad de lo que habla y que entiende lo que cuesta romper con viejos vicios. Sus pautas son claras, sensatas y cero restrictivas. Muy agradecido por su dedicación.",
+    timeAgo: "Hace una semana",
+    date: "Septiembre 2026",
+    quote: "Totalmente recomendada. Lidia, además de una gran profesional, es una persona maravillosa. Mi vida cambió cuando la conocí. Solo puedo expresar mi gratitud por todo lo que he conseguido en mi vida gracias a su guía. He aprendido muchísimo a cuidarme, a entenderme y a construir un estilo de vida que mantengo en mi día a día.",
     verified: true,
+    ownerResponse: "Elisabeth, muchísimas gracias por tus palabras y por compartir tu experiencia. 💚 Me emociona especialmente leerte porque todo lo que cuentas refleja algo en lo que creo profundamente: que el objetivo no es vivir siguiendo una dieta, sino aprender a cuidarte, entenderte y construir una forma de hacerlo que puedas mantener en tu vida real. Pero, sobre todo, quiero que sepas que todo lo que has conseguido es tuyo. Yo he tenido el privilegio de acompañarte, pero has sido tú quien ha hecho el proceso, tomado las decisiones y construido todos esos cambios. Gracias por confiar en mí y en Equilibrio 360º, y por permitirme acompañarte en una parte tan importante de tu vida. Ha sido un verdadero placer verte avanzar y descubrir todo lo que eres capaz de conseguir. 💚",
   },
   {
-    author: "Elena R.",
+    author: "Els de Coninck",
+    reviewCount: "5 reseñas · 10 fotos",
     source: "Google Reseñas",
     rating: 5,
-    date: "19/08/2024",
-    quote: "Increíble profesional. Acudí por problemas digestivos y desgana generalizada, y en pocas semanas recuperé la energía que creía perdida. El trato es impecable, cercano y profundamente humano. La recomiendo al cien por cien.",
+    timeAgo: "Hace 2 meses",
+    date: "Agosto 2026",
+    quote: "Si alguien me preguntara a quién recomendaría sin dudarlo, diría a Lidia. Es una persona súper cercana, que te escucha, te entiende y te acompaña sin juzgar. Lo que más admiro de ella es que sabe perfectamente lo que se siente, porque ella misma ha luchado durante años por perder peso. Por eso habla desde la experiencia y no solo desde la teoría.\n\nCon Lidia no solo aprendes a comer mejor, también aprendes a cuidarte, a quererte y a trabajar tu salud mental. Gracias por demostrar que sí se puede y por inspirarnos cada día con tu ejemplo. ¡Eres una gran profesional y una persona aún mejor!",
     verified: true,
+    ownerResponse: "Muchísimas gracias por tus palabras. ❤️ Me emociona especialmente que hayas destacado algo que forma parte de la esencia de mi trabajo: acompañar desde la escucha, la comprensión y sin juicios. Mi propia historia me enseñó que perder peso no era solo cuestión de saber qué comer, sino de aprender a cuidarnos desde un lugar mucho más profundo. Por eso decidí convertir esa experiencia en mi propósito y crear un método que ayude a otras personas a construir una salud que puedan sostener en el tiempo. Gracias por confiar en mí, por valorar mi trabajo y por dedicar unos minutos a compartir tu experiencia. Comentarios como el tuyo me recuerdan cada día por qué elegí este camino. Un abrazo enorme.",
   },
 ];
 
