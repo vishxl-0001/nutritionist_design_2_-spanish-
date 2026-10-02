@@ -35,7 +35,7 @@ export default function ResultadosPage() {
               <span className="text-xs font-mono text-ink-muted uppercase">/ 5,0 en Google Reseñas</span>
             </div>
             <p className="text-xs text-ink-muted">
-              {SITE_CONFIG.googleReviewsCount} reseñas reales verificadas en el perfil de Google My Business de Lidia Llanelis.
+              Reseñas reales y contrastadas en el perfil de Google My Business de Lidia Llanelis.
             </p>
           </div>
 

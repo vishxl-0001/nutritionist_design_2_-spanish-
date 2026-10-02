@@ -51,7 +51,6 @@ export const SITE_CONFIG = {
   city: "[TO_FILL: Ciudad y provincia en España]",
   hoursSummary: "Apertura a las 10:00 h · Horario semanal completo [TO_FILL: ej. L-V de 10:00 a 19:30]",
   googleRating: "5,0",
-  googleReviewsCount: 3,
   googleRatingText: "5,0 en Google",
   googleReviewsUrl: "[TO_FILL: Enlace directo al perfil verificado de Google My Business]",
   instagramHandle: "[TO_FILL: @lidiallanelis]",

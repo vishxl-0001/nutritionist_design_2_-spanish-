@@ -28,7 +28,7 @@ export default function Footer() {
             </p>
             <div className="pt-2">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-bone/20 text-xs text-sand">
-                <span className="text-clay">★</span> {SITE_CONFIG.googleRating} en Google (3 reseñas reales)
+                <span className="text-clay">★</span> {SITE_CONFIG.googleRating} en Google &middot; Reseñas verificadas
               </span>
             </div>
           </div>
